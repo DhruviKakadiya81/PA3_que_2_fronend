@@ -1,0 +1,83 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Product Name :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          #name
+          [(ngModel)]="product.name"
+        />
+      </div>
+      <div
+        *ngIf="
+          angForm.controls['name'].errors != null &&
+          angForm.controls['name'].invalid &&
+          (angForm.controls['name'].dirty || angForm.controls['name'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="angForm.controls['name'].errors['required']">
+          Product Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Product Price :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="price"
+          #price
+          [(ngModel)]="product.price"
+        />
+      </div>
+      <div
+        *ngIf="
+          angForm.controls['price'].errors != null &&
+          angForm.controls['price'].invalid &&
+          (angForm.controls['price'].dirty || angForm.controls['price'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="angForm.controls['price'].errors['required']">
+          Product Price is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Product Description :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="desc"
+          #desc
+          [(ngModel)]="product.desc"
+        />
+      </div>
+      <div
+        *ngIf="
+          angForm.controls['desc'].errors != null &&
+          angForm.controls['desc'].invalid &&
+          (angForm.controls['desc'].dirty || angForm.controls['desc'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="angForm.controls['desc'].errors['required']">
+          Description is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <button
+          style="margin: 10px;"
+          type="button"
+          (click)="updateBook()"
+          [disabled]="angForm.invalid"
+          class="btn btn-primary"
+        >
+          Update Product
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

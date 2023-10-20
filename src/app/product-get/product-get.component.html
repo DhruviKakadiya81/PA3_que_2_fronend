@@ -1,0 +1,32 @@
+<table class="table table-hover">
+  <thead>
+    <tr style="font-weight: bold;">
+      <td>Product Name</td>
+      <td>Product Price</td>
+      <td>Product Description</td>
+      <td>Edit</td>
+      <td>Delete</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.desc }}</td>
+      <td>
+        <a
+          [routerLink]="['/product/edit', product._id]"
+          class="btn btn-primary"
+        >
+          Edit Product
+        </a>
+      </td>
+      <td>
+        <a (click)="deleteBook(product._id)" class="btn btn-danger">
+          Delete Product
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

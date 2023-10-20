@@ -25,9 +25,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "F:/sem_7_practical/angular/practical_assign_que_2/shp_cart/node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "F:/sem_7_practical/angular/practical_assign_que_2/shp_cart/node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -87,12 +90,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "F:/sem_7_practical/angular/practical_assign_que_2/shp_cart/node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "F:/sem_7_practical/angular/practical_assign_que_2/shp_cart/node_modules/jquery/dist/jquery.min.js"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9e577723-8617-4151-938b-4dabce11c757"
   }
 }

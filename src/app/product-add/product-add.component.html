@@ -1,0 +1,67 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm">
+      <div class="form-group">
+        <label class="col-md-4">Product Name :</label>
+        <input type="text" formControlName="name" class="form-control" />
+      </div>
+      <div
+        *ngIf="
+          angForm.controls['name'].errors != null &&
+          angForm.controls['name'].invalid &&
+          (angForm.controls['name'].dirty || angForm.controls['name'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="angForm.controls['name'].errors['required'] != null">
+          Product Name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">Price :</label>
+        <input type="text" formControlName="price" class="form-control" />
+      </div>
+      <div
+        *ngIf="
+          angForm.controls['price'].errors != null &&
+          angForm.controls['price'].invalid &&
+          (angForm.controls['price'].dirty || angForm.controls['price'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="angForm.controls['price'].errors['required'] != null">
+          Product Price is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">Description :</label>
+        <input type="text" formControlName="desc" class="form-control" />
+      </div>
+      <div
+        *ngIf="
+          angForm.controls['desc'].errors != null &&
+          angForm.controls['desc'].invalid &&
+          (angForm.controls['desc'].dirty || angForm.controls['desc'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="angForm.controls['desc'].errors['required'] != null">
+          Description is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button
+          style="margin: 10px;"
+          (click)="insertBook()"
+          [disabled]="angForm.pristine || angForm.invalid"
+          class="btn btn-primary"
+        >
+          Add Product
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
